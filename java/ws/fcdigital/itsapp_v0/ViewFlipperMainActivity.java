@@ -1,4 +1,4 @@
-package com.android.andre.itsappningtestlist3;
+package ws.fcdigital.itsapp_v0;
 
 import android.app.Activity;
 import android.os.Bundle;

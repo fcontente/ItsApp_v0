@@ -1,4 +1,4 @@
-package com.android.andre.itsappningtestlist3;
+package ws.fcdigital.itsapp_v0;
 
 import android.app.Activity;
 import android.graphics.Paint;
@@ -25,9 +25,9 @@ import java.util.List;
 
 // List view: {views: events.xml}
 
-public class MainActivity extends ActionBarActivity implements com.android.andre.itsappningtestlist3.NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends ActionBarActivity implements ws.fcdigital.itsapp_v0.NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    private List<Event> myEvents = new ArrayList<Event>();
+    private List<EventItsApp> myEvents = new ArrayList<EventItsApp>();
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -59,9 +59,9 @@ public class MainActivity extends ActionBarActivity implements com.android.andre
 
     // Populate Events List
     private void populateEventList() {
-        myEvents.add(new Event("O Chocolate em", "Campo Pequeno", "Food & Beverage", "05", "Fev", "20:00", R.drawable.bg0));
-        myEvents.add(new Event("O Chocolate em", "Campo Grande", "Food", "06", "Fev", "21:00", R.drawable.bg1));
-        myEvents.add(new Event("O Chocolate em", "Entrecampos", "Beverage", "07", "Fev", "22:00", R.drawable.bg2));
+        myEvents.add(new EventItsApp("O Chocolate em", "Campo Pequeno", "Food & Beverage", "05", "Fev", "20:00", R.drawable.bg0));
+        myEvents.add(new EventItsApp("O Chocolate em", "Campo Grande", "Food", "06", "Fev", "21:00", R.drawable.bg1));
+        myEvents.add(new EventItsApp("O Chocolate em", "Entrecampos", "Beverage", "07", "Fev", "22:00", R.drawable.bg2));
     }
 
     private void populateListView() {
@@ -74,11 +74,11 @@ public class MainActivity extends ActionBarActivity implements com.android.andre
         list.addHeaderView(headerView);
 
         // Set Adapter
-        ArrayAdapter<Event> adapter = new MyListAdapter();
+        ArrayAdapter<EventItsApp> adapter = new MyListAdapter();
         list.setAdapter(adapter);
     }
 
-    private class MyListAdapter extends ArrayAdapter<Event> {
+    private class MyListAdapter extends ArrayAdapter<EventItsApp> {
         public MyListAdapter() {
             super(MainActivity.this, R.layout.event_view, myEvents);
         }
@@ -93,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements com.android.andre
             }
 
             // Find the car to work with.
-            Event currentEvent = myEvents.get(position);
+            EventItsApp currentEvent = myEvents.get(position);
 
             // Fill the view
             ImageView imageView = (ImageView) eventView.findViewById(R.id.event_picture);

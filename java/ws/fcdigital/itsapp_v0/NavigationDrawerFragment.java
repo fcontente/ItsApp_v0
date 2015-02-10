@@ -1,4 +1,4 @@
-package com.android.andre.itsappningtestlist3;
+package ws.fcdigital.itsapp_v0;
 
 
 import android.support.v7.app.ActionBarActivity;
